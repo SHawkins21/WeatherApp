@@ -1,29 +1,41 @@
 import Image from "next/image";
 import { getRealtimeWeather, getWeatherForcast } from "./api/weather";
+import DailyItem from "./components/DailyItem";
+import { checkCondition } from "./utils/checkCondition";
+import {DailyWeather} from "./constance/types"
+
+
+
 
 export default async function Home() {
 const {data} = await getRealtimeWeather('Glens Falls')
 const {values} = data;
-const { tempature, windSpeed, tempatureApparent, weatherCode } = values; 
+const { temperature, windSpeed, temperatureApparent, weatherCode } = values; 
 const {timelines} = await getWeatherForcast('32601')
 const { daily } = timelines;
 
-console.log(data); 
-
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <h1>Weather</h1>
-      <div>
-        {tempature}
+    <main className=" p-24 text-white">
+      <div className="container max-w-[90%]">
+      
+      
+      <div className="text-5xl">
+        {temperature}
       </div>
       {
-        daily.map((day:any, index:any) => (
+        daily.map((day:DailyWeather, index:number) => (
           <div key={index}>
-          {day.values.tempatureMax}
+            <DailyItem 
+              key={index}
+              {...day.values}
+              time={day.time}
+              weatherCondition={checkCondition(daily.values.weatherCodeMax).condition}
+              Icon={checkCondition(day.values.weatherCodeMax).Icon}            />
+          {/* {day.values.temperatureMax} */}
           </div>
         ))
       }
-      
+     </div> 
     </main>
   );
 }

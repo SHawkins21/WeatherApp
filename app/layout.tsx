@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import Header from "./components/Header";
+import CenterBox from "./components/CenterBox";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -16,7 +18,20 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      
+      <body className={inter.className} >
+      <div className="bg-gradient-to-br from-lightpurple to-darkpurple p-24 text-white">
+       <Header> </Header>
+        <CenterBox>
+
+        {children}
+
+       </CenterBox>
+       
+      </div>
+      </body>
+      
+      
     </html>
   );
 }
