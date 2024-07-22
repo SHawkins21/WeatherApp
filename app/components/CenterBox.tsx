@@ -8,6 +8,8 @@ type Props = {}
 const CenterBox = async ({ children, }: { children: React.ReactNode }) => {
     const {data} = await getRealtimeWeather('Glens Falls')
     const {values} = data
+    // const {code, condition} = weatherCodesArray
+    // const {wcvalue} = code
     const { temperature, windSpeed, temperatureApparent, weatherCode } = values; 
     const {timelines} = await getWeatherForcast('32601')
     const { daily } = timelines;

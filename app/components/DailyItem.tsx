@@ -29,7 +29,7 @@ const DailyItem = ({
     <div className='w-6 h-6'><Icon/></div>
     <div>{temperatureMax} | {temperatureMin}</div>
     <div>{windSpeedMax} | {windSpeedMin}</div>
-    <div>{weatherCondition}</div>
+    {/* <div>{weatherCondition}</div> */}
   
     </div>
   )

@@ -17,7 +17,8 @@ const { daily } = timelines;
   return (
     <main className=" p-24 text-white">
       <div className="container max-w-[90%]">
-      
+      {/* flex justify-between items-center mt-1 */}
+      {/* //flex flex-col items-center gap-2 border-2 rounded-lg p-2 font-bold */}
       
       <div className="text-5xl">
         {temperature}
