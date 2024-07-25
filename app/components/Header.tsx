@@ -4,7 +4,7 @@ import { IoSettings } from "react-icons/io5";
 
 const Header = ({ children }: { children: React.ReactNode }) => {
   return (
-    <div className="bg-transparent mt-0 h-full text-white">
+    <div className="bg-transparent mt-0 text-white">
     <div className="flex justify-between">
       <div className="flex justify-items-start align-middle space-x-2">
         <div className="text-4xl">
