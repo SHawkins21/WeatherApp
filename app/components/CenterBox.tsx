@@ -5,6 +5,7 @@ import { weatherCodesArray } from "../constance/code";
 import { DailyWeather } from "../constance/types";
 import DailyItem from "./DailyItem";
 import { checkCondition } from "../utils/checkCondition";
+import { TfiTime } from "react-icons/tfi";
 
 type Props = {};
 
@@ -22,28 +23,50 @@ const CenterBox = async ({ children }: { children: React.ReactNode }) => {
         <div className="absolute flex-col justify-items-center justify-center">
           <div className="text-white">
             <TbSunset2 className="size-40" />
-            
+
             <div className="flex justify-center text-4xl">
               {values.temperatureApparent}
             </div>
-            <div className="flex justify-items-center justify-center">Clear</div>
+            <div className="flex justify-items-center justify-center">
+              Clear
+            </div>
           </div>
-          <div>
-            {daily.slice(0, 3).map((day: DailyWeather, index: number) => (
-              <div key={index}>
-                <DailyItem
-                  key={index}
-                  {...day.values}
-                  time={day.time}
-                  weatherCondition={
-                    checkCondition(daily.values.weatherCodeMax).condition
-                  }
-                  Icon={checkCondition(day.values.weatherCodeMax).Icon}
-                />
-                {/* {day.values.temperatureMax} */}
-              </div>
-            ))}
-          </div>
+        </div>
+
+        <div>
+          <div
+            className="mt-60
+
+                flex p-2 justify-between w-[300px]
+                size-15 place-items-center
+                
+                bg-gradient-to-r from-lightpurple to-sunsetpurple rounded-2xl text-black"
+          >
+            <div className="flex text-white space-x-3 m-2">
+              <TfiTime className="size-5" />
+              <h1>Time</h1>
+            </div>
+            <div className="flex text-xl text-white space-x-1 m-2">
+              <h2 className="font-bold">5:42</h2> <p>PM</p>
+            </div>
+            </div>
+            <div className="flex justify-center justify-items-center space-x-12 mt-20">
+              {daily.slice(0, 3).map((day: DailyWeather, index: number) => (
+                <div key={index}>
+                  <DailyItem
+                    key={index}
+                    {...day.values}
+                    time={day.time}
+                    weatherCondition={
+                      checkCondition(daily.values.weatherCodeMax).condition
+                    }
+                    Icon={checkCondition(day.values.weatherCodeMax).Icon}
+                  />
+                  {/* {day.values.temperatureMax} */}
+                </div>
+              ))}
+            </div>{" "}
+          
         </div>
       </div>
 

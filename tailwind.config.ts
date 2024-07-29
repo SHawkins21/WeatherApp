@@ -11,7 +11,8 @@ const config: Config = {
       
         colors:{
           'darkpurple': '#483976',
-          'lightpurple':'#965298'
+          'lightpurple':'#965298',
+          'sunsetpurple':'#8f5c9f'
         }
         
       ,
