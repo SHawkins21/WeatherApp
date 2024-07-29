@@ -20,18 +20,17 @@ const CenterBox = async ({ children }: { children: React.ReactNode }) => {
     <div>
       <div className="relative flex justify-center mt-6">
         <div className="absolute flex-col justify-items-center justify-center">
-          <TbSunset2 className="size-40" />
-          <h2 className="">Feels Like</h2>
-          <div className="flex justify-center text-4xl">
-            {values.temperatureApparent}
+          <div className="text-white">
+            <TbSunset2 className="size-40" />
+            
+            <div className="flex justify-center text-4xl">
+              {values.temperatureApparent}
+            </div>
+            <div className="flex justify-items-center justify-center">Clear</div>
           </div>
-          <div className="text-5xl ">{temperature}</div>
-
           <div>
             {daily.slice(0, 3).map((day: DailyWeather, index: number) => (
-              <div 
-              
-              key={index}>
+              <div key={index}>
                 <DailyItem
                   key={index}
                   {...day.values}
