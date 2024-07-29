@@ -19,8 +19,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       
-      <body className={inter.className} >
-      <div className="bg-gradient-to-br from-lightpurple to-darkpurple p-4 text-white">
+      <body className={`bg-gradient-to-br from-lightpurple to-darkpurple p-4 text-white${inter.className}`} >
+      <div>
        <Header> </Header>
         <CenterBox>
 

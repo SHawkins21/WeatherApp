@@ -18,20 +18,21 @@ const DailyItem = ({
     time,
     temperatureMax,
     temperatureMin, 
-    windSpeedMax,
-    windSpeedMin, 
+   
     Icon,
     weatherCondition,
 }:Props) => {
   return (
+   
     <div>
     <div>{dayFormat(time)}</div>
     <div className='w-6 h-6'><Icon/></div>
-    <div>{temperatureMax} | {temperatureMin}</div>
-    <div>{windSpeedMax} | {windSpeedMin}</div>
+    <div>{temperatureMax}</div>
+    
     {/* <div>{weatherCondition}</div> */}
   
     </div>
+    
   )
 }
 

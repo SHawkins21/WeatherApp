@@ -3,7 +3,7 @@ import { getRealtimeWeather, getWeatherForcast } from "./api/weather";
 import DailyItem from "./components/DailyItem";
 import { checkCondition } from "./utils/checkCondition";
 import {DailyWeather} from "./constance/types"
-
+// import Model from "./components/Model";
 
 
 
@@ -19,24 +19,11 @@ const { daily } = timelines;
       <div className="container max-w-[90%]">
       {/* flex justify-between items-center mt-1 */}
       {/* //flex flex-col items-center gap-2 border-2 rounded-lg p-2 font-bold */}
+      <div className="">
       
-      <div className="text-5xl">
-        {temperature}
-      </div>
-      {
-        daily.map((day:DailyWeather, index:number) => (
-          <div key={index}>
-            <DailyItem 
-              key={index}
-              {...day.values}
-              time={day.time}
-              weatherCondition={checkCondition(daily.values.weatherCodeMax).condition}
-              Icon={checkCondition(day.values.weatherCodeMax).Icon}            />
-          {/* {day.values.temperatureMax} */}
-          </div>
-        ))
-      }
      </div> 
+     {/* <Model/> */}
+     </div>
     </main>
   );
 }
