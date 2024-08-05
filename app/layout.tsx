@@ -19,15 +19,15 @@ export default function RootLayout({
   return (
     <html lang="en">
       
-      <body className={`bg-gradient-to-br from-lightpurple to-darkpurple p-4 text-white${inter.className}`} >
+      <body className={`bg-gradient-to-br from-lightpurple to-darkpurple text-white${inter.className}`} >
       <div>
-       <Header> </Header>
-        <CenterBox>
+       <Header> 
+        {/* <CenterBox> */}
 
         {children}
 
-       </CenterBox>
-       
+       {/* </CenterBox> */}
+       </Header>
       </div>
       </body>
       
