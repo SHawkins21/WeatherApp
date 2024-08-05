@@ -7,6 +7,7 @@ import DailyItem from "./DailyItem";
 import { checkCondition } from "../utils/checkCondition";
 import { TfiTime } from "react-icons/tfi";
 import Model from "./Model";
+import TempCont from "./TempCont";
 
 type Props = {};
 
@@ -24,9 +25,10 @@ const CenterBox = async ({ children }: { children: React.ReactNode }) => {
         <div className="absolute flex-col justify-items-center justify-center">
           <div className="text-white">
             <TbSunset2 className="size-40" />
-            <div className="flex justify-center text-4xl">
+            <TempCont temperature={temperature} />
+            {/* <div className="flex justify-center text-4xl">
               {values.temperatureApparent}
-            </div>
+            </div> */}
             <div className="flex justify-items-center justify-center">
               Clear
             </div>

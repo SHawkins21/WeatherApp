@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@crossfox/react-animated-number": "^1.0.18",
     "@prisma/client": "^5.17.0",
     "framer-motion": "^11.3.7",
     "moment": "^2.30.1",
