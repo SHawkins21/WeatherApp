@@ -8,10 +8,14 @@ import { checkCondition } from "../utils/checkCondition";
 import { TfiTime } from "react-icons/tfi";
 import Model from "./Model";
 import TempCont from "./TempCont";
+import GetCities from "../orm/getcity";
 
 type Props = {};
 
 const CenterBox = async ({ children }: { children: React.ReactNode }) => {
+  // const setCity = async () => {
+  //   await console.log(city)
+  // }
   const { data } = await getRealtimeWeather("Glens Falls");
   const { values } = data;
   // const {code, condition} = weatherCodesArray
@@ -66,8 +70,12 @@ const CenterBox = async ({ children }: { children: React.ReactNode }) => {
             ))}
           </div>
         </div>
-        <Model />
+      <Model locations={undefined} 
+      
+      sendCity={GetCities} />
+        
       </div>
+      
       {children}
     </div>
   );

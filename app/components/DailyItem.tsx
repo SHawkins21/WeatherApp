@@ -2,7 +2,7 @@ import React from 'react'
 import { dayFormat } from '../utils/dayFormat';
 import { IconType } from 'react-icons';
 
-type Props = {
+type WeatherProps = {
   time: string
     temperatureMax: number, 
     temperatureMin: number, 
@@ -14,13 +14,14 @@ type Props = {
     weatherCondition: string
 }; 
 
+
 const DailyItem = ({
     time,
     temperatureMax,
     temperatureMin, 
     Icon,
     weatherCondition,
-}:Props) => {
+}:WeatherProps) => {
   return (
    
     <div className='flex-col justify-center justify-items-center text-white'>
