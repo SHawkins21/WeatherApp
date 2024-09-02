@@ -1,5 +1,6 @@
 import {create} from "zustand"; 
 
+// https://www.weatherapi.com/
 
 
 export const useLocationStore = create<LocationStore>((set) => ({
