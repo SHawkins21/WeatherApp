@@ -14,10 +14,10 @@ const locationSchema = z.object({
 //     longitude: z.string().nullable(),
 // })
 
-export const setFavoriteLocation = async (formData: FormData) => {
-    const form = Object.fromEntries(formData.entries());
-    const location = locationSchema.parse(form);
-    console.log(location)
+export const setFavoriteLocation = async (city: string) => {
+    // const form = Object.fromEntries(formData.entries());
+    // const location = locationSchema.parse(form);
+    console.log(city)
     try{
     }catch(e){
         console.log(e)
