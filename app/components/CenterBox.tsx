@@ -1,10 +1,12 @@
+'use client'
+
 import React from "react";
 import { TbSunset2 } from "react-icons/tb";
 import { getRealtimeWeather, getWeatherForcast } from "../api/weather";
 import { weatherCodesArray } from "../constance/code";
 import { TfiTime } from "react-icons/tfi";
 
-type Props = {};
+
 
 const CenterBox = async ({ children }: { children: React.ReactNode }) => {
   const { data } = await getRealtimeWeather("Glens Falls");
@@ -13,7 +15,8 @@ const CenterBox = async ({ children }: { children: React.ReactNode }) => {
   const { timelines } = await getWeatherForcast("32601");
   const { daily } = timelines;
   return (
-    <div className="">     
+    <div className="">  
+    console.log(values)   
 {/* sun and Apparent Tempature Start  */}
           <div className="">
             <div>
