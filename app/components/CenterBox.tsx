@@ -2,14 +2,15 @@ import React from "react";
 import { TbSunset2 } from "react-icons/tb";
 import { getRealtimeWeather, getWeatherForcast } from "../api/weather";
 import { weatherCodesArray } from "../constance/code";
-import { DailyWeather } from "../constance/types";
+import { DailyWeather } from "../constance";
 import DailyItem from "./DailyItem";
 import { checkCondition } from "../utils/checkCondition";
 import { TfiTime } from "react-icons/tfi";
 import Model from "./Model";
 import TempCont from "./TempCont";
-import GetCities from "../orm/getcity";
-
+import {getFavoriteLocation} from "../orm/getcity";
+import moment from "moment";
+import TimeBanner from "./TimeBanner";
 type Props = {};
 
 const CenterBox = async ({ children }: { children: React.ReactNode }) => {
@@ -39,20 +40,9 @@ const CenterBox = async ({ children }: { children: React.ReactNode }) => {
           </div>
         </div>
         <div className="space-y-10">
-          <div
-            className="mt-60
-                flex p-2 justify-between w-[300px]
-                size-15 place-items-center
-                bg-gradient-to-r from-lightpurple to-sunsetpurple rounded-2xl text-black"
-          >
-            <div className="flex text-white space-x-3 m-2">
-              <TfiTime className="size-5" />
-              <h1>Time</h1>
-            </div>
-            <div className="flex text-xl text-white space-x-1 m-2">
-              <h2 className="font-bold">5:42</h2> <p>PM</p>
-            </div>
-          </div>
+          {/* Time Banner Start */}
+    <TimeBanner />
+          {/* Time Banner End */}
           <div className="flex justify-center justify-items-center space-x-12 mt-20">
             {daily.slice(0, 3).map((day: DailyWeather, index: number) => (
               <div key={index}>
@@ -70,9 +60,7 @@ const CenterBox = async ({ children }: { children: React.ReactNode }) => {
             ))}
           </div>
         </div>
-      <Model locations={undefined} 
-      
-      sendCity={GetCities} />
+      <Model />
         
       </div>
       

@@ -2,7 +2,7 @@ import Image from "next/image";
 import { getRealtimeWeather, getWeatherForcast } from "./api/weather";
 import DailyItem from "./components/DailyItem";
 import { checkCondition } from "./utils/checkCondition";
-import {DailyWeather} from "./constance/types"
+import {DailyWeather} from "./constance"
 import CenterBox from "./components/CenterBox";
 
 // import Model from "./components/Model";

@@ -1,5 +1,8 @@
 'use server'
 import z from "zod";
+import prisma from "../lib/prisma";
+import { revalidatePath } from "next/cache";
+import { get } from "http";
 const locationSchema = z.object({
  
     location: z.string().trim()
@@ -19,7 +22,13 @@ export const setFavoriteLocation = async (city: string) => {
     // const location = locationSchema.parse(form);
     console.log(city)
     try{
+        const save = await prisma.location.create({
+            data:{
+                city
+            }
+        })
     }catch(e){
         console.log(e)
+        revalidatePath('/api/location')
     }
 }

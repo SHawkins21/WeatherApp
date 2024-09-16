@@ -1,15 +1,19 @@
 'use server'
 
-import prisma from "./lib"
+import prisma from "../lib/prisma";
 
-const GetCities = async () => {
-    const locations = await prisma.location.findMany({
-        select: {
-            id: true,
-            city: true,
-            country: true
-        }
-    })
+export const getFavoriteLocation = async () => {
+    try{
+        return await prisma.location.findMany({
+            select: {
+                id: true,
+                city: true,
+                country: true
+            }
+        })
+    
+}catch(e){
+    console.log(e)
+
 }
-
-export default GetCities
+}

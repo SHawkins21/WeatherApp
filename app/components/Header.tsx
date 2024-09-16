@@ -1,6 +1,9 @@
+"use client"
+const key = process.env.REACT_APP_API_KEY
 import React from "react";
 import { IoLocationOutline } from "react-icons/io5";
 import { IoSettings } from "react-icons/io5";
+import Weatherlist from "./Weatherlist";
 
 const Header = ({ children }: { children: React.ReactNode }) => {
   return (
@@ -10,7 +13,8 @@ const Header = ({ children }: { children: React.ReactNode }) => {
         <div className="text-4xl">
           <IoLocationOutline />
         </div>
-        <div className="text-xl">New York</div>
+        <Weatherlist/>
+        {/* <div className="text-xl">New York</div> */}
       </div>
       <div className="text-4xl">
         <IoSettings/>

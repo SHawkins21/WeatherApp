@@ -17,7 +17,8 @@
 }
 
 body {
-  @apply h-screen overflow-x-hidden
+  @apply h-screen overflow-x-hidden overflow-y-hidden
+  
   
  
 }
